@@ -1,0 +1,23 @@
+networks:
+  openclaw-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+
+services:
+  openclaw:
+    image: openclaw:2026.3.28v1
+    container_name: openclaw
+    ports:
+      - "18789:18789"
+    networks:
+      openclaw-net:
+        ipv4_address: 172.30.0.2
+    volumes:
+      - ./openclaw-data:/root/.openclaw
+      - /Users/wheng/Documents/dream/game:/root/.openclaw/workspace/game
+    environment:
+      - OPENCLAW_HOME=/root
+      - OPENCLAW_WORKSPACE=/root/.openclaw/workspace
+    command: ["openclaw", "gateway", "--port", "18789", "--allow-unconfigured"]
