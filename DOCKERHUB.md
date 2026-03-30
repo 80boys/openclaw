@@ -9,7 +9,7 @@ docker run -d \
   --name openclaw \
   -p 18789:18789 \
   -v openclaw-data:/root/.openclaw \
-  wuheng0319/openclaw:2026.3.28
+  wuheng0319/openclaw:2026.3.28v1
 ```
 
 启动后获取 Dashboard 链接：
@@ -30,7 +30,7 @@ docker run -d \
   -p 18789:18789 \
   -v openclaw-data:/root/.openclaw \
   -v /path/to/your/project:/root/.openclaw/workspace/project \
-  wuheng0319/openclaw:2026.3.28
+  wuheng0319/openclaw:2026.3.28v1
 ```
 
 支持同时挂载多个项目：
@@ -52,7 +52,7 @@ networks:
 
 services:
   openclaw:
-    image: wuheng0319/openclaw:2026.3.28
+    image: wuheng0319/openclaw:2026.3.28v1
     container_name: openclaw
     ports:
       - "18789:18789"
