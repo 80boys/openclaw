@@ -7,7 +7,7 @@ networks:
 
 services:
   openclaw:
-    image: openclaw:2026.3.28v1
+    image: openclaw:2026.3.28v3
     container_name: openclaw
     ports:
       - "18789:18789"
@@ -16,7 +16,7 @@ services:
         ipv4_address: 172.30.0.2
     volumes:
       - ./openclaw-data:/root/.openclaw
-      - /Users/wheng/Documents/dream/game:/root/.openclaw/workspace/game
+      - /Users/wheng/Documents/dream/game:/root/game
     environment:
       - OPENCLAW_HOME=/root
       - OPENCLAW_WORKSPACE=/root/.openclaw/workspace
